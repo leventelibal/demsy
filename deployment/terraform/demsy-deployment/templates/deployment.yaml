@@ -1,22 +1,22 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ include "artemis-deployment.fullname" . }}
+  name: {{ include "demsy-deployment.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "artemis-deployment.name" . }}
-    helm.sh/chart: {{ include "artemis-deployment.chart" . }}
+    app.kubernetes.io/name: {{ include "demsy-deployment.name" . }}
+    helm.sh/chart: {{ include "demsy-deployment.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "artemis-deployment.name" . }}
+      app.kubernetes.io/name: {{ include "demsy-deployment.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "artemis-deployment.name" . }}
+        app.kubernetes.io/name: {{ include "demsy-deployment.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
 {{- if .Values.imageSecret.enabled }}
@@ -42,7 +42,7 @@ spec:
               port: http
           command:
           - python
-          - /app/artemis.py
+          - /app/demsy.py
 
           resources:
 {{ toYaml .Values.resources | indent 12 }}

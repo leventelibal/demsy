@@ -2,18 +2,18 @@ variable "deployment_environment" {
   default = "dev"
 }
 
-variable "dns_endpoint_artemis" {
+variable "dns_endpoint_demsy" {
   type = "map"
 
   default = {
-    dev  = "dev.artemis.fuchicorp.com"
-    qa   = "qa.artemis.fuchicorp.com"
-    prod = "artemis.fuchicorp.com"
+    dev  = "dev.demsy.indyreliable.com"
+    qa   = "qa.demsy.indyreliable.com"
+    prod = "demsy.indyreliable.com"
   }
 }
 
 variable "deployment_image" {
-  default = "docker.fuchicorp.com/artemis-dev"
+  default = "docker.indyreliable.com/demsy-dev"
 }
 
 

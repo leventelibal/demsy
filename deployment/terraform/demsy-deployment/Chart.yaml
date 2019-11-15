@@ -1,0 +1,16 @@
+apiVersion: "v1"
+appVersion: "v0.1"
+description: demsy
+name: leventelibal-demsy
+version: "0.1"
+kubeVersion: v1.13.10-gke.0
+keywords:
+  - demsy
+home: https://github.com/leventelibal/demsy
+sources:
+  - https://github.com/leventelibal/demsy.git
+maintainers:
+  - name: leventelibal
+    email: leventelibal@gmail.com
+    url: https://github.com/leventelibal
+tillerVersion: v2.11.0

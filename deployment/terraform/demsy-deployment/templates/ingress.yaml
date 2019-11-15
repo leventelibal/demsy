@@ -1,13 +1,13 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "artemis-deployment.fullname" . -}}
+{{- $fullName := include "demsy-deployment.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "artemis-deployment.name" . }}
-    helm.sh/chart: {{ include "artemis-deployment.chart" . }}
+    app.kubernetes.io/name: {{ include "demsy-deployment.name" . }}
+    helm.sh/chart: {{ include "demsy-deployment.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- with .Values.ingress.annotations }}
